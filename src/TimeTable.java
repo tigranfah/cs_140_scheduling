@@ -152,7 +152,7 @@ public class TimeTable extends JFrame implements ActionListener {
 				if (optimized_value == 1) {
 					courses.elements[random_index + 1].mySlot = slot;
 				} else if (optimized_value == -1) {
-					courses.elements[random_index + 1].mySlot = rand.nextInt(num_slots);
+					courses.elements[random_index + 1].mySlot = (slot + 1) % num_slots;
 				} else {
 					System.out.println("WARNING: optimized value cannot be " + optimized_value);
 				}
