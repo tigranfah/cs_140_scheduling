@@ -1,11 +1,13 @@
+import java.util.ArrayList;
+
 public class Autoassociator {
 	private int weights[][];
 	private int trainingCapacity;
 	
-	public Autoassociator(CourseArray courses) {
-		// TO DO
-		// creates a new Hopfield network with the same number of neurons 
-		// as the number of courses in the input CourseArray
+	public Autoassociator(int num_neurons) {
+		weights = new int[num_neurons][num_neurons];
+		for (int i = 0; i < weights.length; ++i)
+			weights[i][i] = 0;
 	}
 	
 	public int getTrainingCapacity() {
@@ -14,16 +16,45 @@ public class Autoassociator {
 		return 0;
 	}
 	
-	public void training(int pattern[]) {
-		// TO DO
+	public void fit(ArrayList<MinimalEnergyPattern> training_patterns) {
+		System.out.println("Fitting a model with " + training_patterns.size() + " examples.");
+		for (int i = 0; i < weights.length; ++i) {
+			for (int j = 0; j < weights[i].length; ++j) {
+				if (i == j) continue;
+				for (MinimalEnergyPattern pattern : training_patterns) {
+					weights[i][j] += pattern.neurons[i] * pattern.neurons[j];
+				}
+			}
+		}
+		System.out.println("Finished fitting.");
 	}
-	
-	public int unitUpdate(int neurons[]) {
-		// TO DO
-		// implements a single update step and
-		// returns the index of the randomly selected and updated neuron
-		
-		return 0;
+
+	private int[] heaviside_function(int[] neurons) {
+		int[] new_neurons = new int[neurons.length];
+		for (int i = 0; i < neurons.length; ++i) {
+			new_neurons[i] = heaviside_function(neurons[i]);
+		}
+		return new_neurons;
+	}
+
+	private int heaviside_function(int value) {
+		if (value == 0)
+			return 1;
+		return value / Math.abs(value);
+	}
+
+	private int dot_prod(int[][] w, int[] neurons, int index) {
+		int value = 0;
+		for (int i = 0; i < neurons.length; ++i) {
+//			for (int j = 0; j < neurons.length; ++j)
+			value += w[index][i] * neurons[i];
+		}
+		return value;
+	}
+
+	public int unit_optimize(int neurons[], int index) {
+		neurons[index] = heaviside_function(dot_prod(weights, neurons, index));
+		return neurons[index];
 	}
 	
 	public void unitUpdate(int neurons[], int index) {

@@ -1,15 +1,16 @@
 import java.io.*;
 import java.util.StringTokenizer;
+import java.util.Random;
 
 public class CourseArray {
 
-	private Course elements[];
+	public Course elements[];
 	private int period;
 	
 	public CourseArray(int numOfCourses, int numOfSlots) {
 		period = numOfSlots;
 		elements = new Course[numOfCourses];
-		for (int i = 1; i < elements.length; i++) 
+		for (int i = 1; i < elements.length; i++)
 			elements[i] = new Course();
 	}
 	
@@ -66,6 +67,23 @@ public class CourseArray {
 	
 	public int maxClashSize(int index) {
 		return elements[index] == null || elements[index].clashesWith.isEmpty() ? 0 : elements[index].clashesWith.size();
+	}
+
+	public boolean is_clash_free(int slot) {
+		for (int i = 1; i < elements.length; ++i) {
+			if (elements[i].mySlot == slot && elements[i].clashSize() != 0)
+				return false;
+		}
+		return true;
+	}
+
+	public int[] getTimeSlot(int index) {
+		int[] class_schedule = new int[elements.length - 1];
+		// use 0 index array!!!
+		for (int i = 1; i < elements.length; ++i) {
+			class_schedule[i - 1] = (elements[i].mySlot == index) ? 1 : -1;
+		}
+		return class_schedule;
 	}
 	
 	public int clashesLeft() {
