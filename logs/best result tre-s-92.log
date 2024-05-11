@@ -1,0 +1,6 @@
+<<Load>> button pressed
+<<Continue>> button pressed, num_slots: 20, num_iter: 2000, num_shifts: 19
+Shift = 19	Min clashes = 100	at step 1667
+<<Reset>> button pressed
+<<Continue>> button pressed, num_slots: 20, num_iter: 20000, num_shifts: 19
+Shift = 19	Min clashes = 74	at step 17524
