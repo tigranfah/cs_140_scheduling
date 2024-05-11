@@ -1,0 +1,38 @@
+<<Load>> button pressed
+<<Continue>> button pressed, num_slots: 17, num_iter: 10000, num_shifts: 3
+Shift = 3	Min clashes = 234	at step 15
+<<Reset>> button pressed
+<<Continue>> button pressed, num_slots: 17, num_iter: 10000, num_shifts: 33
+Shift = 33	Min clashes = 22	at step 8994
+<<Collect train data>> button pressed
+Shift = 33	Min clashes = 22	at step 8994
+Shift = 33	Min clashes = 22	at step 8994
+12 training samples collected
+<<Reset>> button pressed
+<<Continue>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
+Shift = 31	Min clashes = 20	at step 17366
+<<Collect train data>> button pressed
+Shift = 31	Min clashes = 20	at step 17366
+Shift = 31	Min clashes = 20	at step 17366
+13 training samples collected
+<<Train>> button pressed
+Fitting a model with 25 examples.
+Finished fitting.
+<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
+Shift = 31	Min clashes = 20	at step 17366
+<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
+Shift = 31	Min clashes = 20	at step 17366
+<<Continue>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
+Shift = 31	Min clashes = 16	at step 32670
+<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
+Shift = 31	Min clashes = 16	at step 32670
+<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
+Shift = 31	Min clashes = 16	at step 32670
+<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
+Shift = 31	Min clashes = 16	at step 32670
+<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
+Shift = 31	Min clashes = 16	at step 32670
+<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
+Shift = 31	Min clashes = 16	at step 32670
+<<Continue>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
+Shift = 31	Min clashes = 16	at step 32670
