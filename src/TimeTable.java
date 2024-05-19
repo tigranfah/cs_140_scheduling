@@ -57,17 +57,17 @@ public class TimeTable extends JFrame implements ActionListener {
 			tools.add(tool[i]);
 		}
 		
-		field[0].setText("17");
-		field[1].setText("381");
-		field[2].setText("res/lse-f-91.stu");
-		field[3].setText("200");
-		field[4].setText("19");
-
-//		field[0].setText("20");
-//		field[1].setText("261");
-//		field[2].setText("res/tre-s-92.stu");
+//		field[0].setText("17");
+//		field[1].setText("381");
+//		field[2].setText("res/lse-f-91.stu");
 //		field[3].setText("200");
 //		field[4].setText("19");
+
+		field[0].setText("20");
+		field[1].setText("261");
+		field[2].setText("res/tre-s-92.stu");
+		field[3].setText("200");
+		field[4].setText("19");
 	}
 	
 	public void draw() {
@@ -111,10 +111,30 @@ public class TimeTable extends JFrame implements ActionListener {
 	private ArrayList<MinimalEnergyPattern> collect_train_data(int num_iter, int num_shifts) {
 		reset();
 		perform_iterations(num_iter, num_shifts);
+
+		float mean_number_of_ones = 0;
+		for (int slot = 1; slot <= num_slots; ++slot) {
+			if (courses.is_clash_free(slot)) {
+				int[] class_schedule = courses.getTimeSlot(slot);
+				int num_of_ones = 0;
+				for (int i = 0; i < class_schedule.length; ++i)
+					num_of_ones += (class_schedule[i] + 1) / 2;
+				mean_number_of_ones += num_of_ones;
+			}
+		}
+		mean_number_of_ones /= num_slots;
+		System.out.println("Mean number of exams in a slot " + mean_number_of_ones);
+
 		ArrayList<MinimalEnergyPattern> energy_min_patterns = new ArrayList<>();
 		for (int slot = 1; slot <= num_slots; ++slot) {
 			if (courses.is_clash_free(slot)) {
-				energy_min_patterns.add(new MinimalEnergyPattern(courses.getTimeSlot(slot)));
+				int[] class_schedule = courses.getTimeSlot(slot);
+				int num_of_ones = 0;
+				for (int i = 0; i < class_schedule.length; ++i)
+					num_of_ones += (class_schedule[i] + 1) / 2;
+				System.out.println("num of scheduled exams in slot " + slot + ": " + num_of_ones);
+				if (num_of_ones >= mean_number_of_ones)
+					energy_min_patterns.add(new MinimalEnergyPattern(class_schedule));
 			}
 		}
 		return energy_min_patterns;
