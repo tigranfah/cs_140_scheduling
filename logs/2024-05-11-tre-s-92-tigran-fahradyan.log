@@ -1,4 +1,10 @@
+Date: 2024-05-11
+Author: Tigran Fahradyan
+Git commit hash: aae10f0ec88f5b2a9adb772995736d2f8b1328d9
+Git commit is specified to indicate the code (logic) used for the results obtained in this log file, and to ensure reproducability
+
 <<Load>> button pressed
+Loading the file res/tre-s-92.stu
 <<Continue>> button pressed, num_slots: 20, num_iter: 2000, num_shifts: 19
 Shift = 19	Min clashes = 100	at step 1667
 <<Reset>> button pressed

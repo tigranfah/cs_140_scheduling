@@ -1,13 +1,12 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Random;
 import javax.swing.*;
+import java.time.LocalDate;
 
 public class TimeTable extends JFrame implements ActionListener {
 
@@ -58,17 +57,17 @@ public class TimeTable extends JFrame implements ActionListener {
 			tools.add(tool[i]);
 		}
 		
-//		field[0].setText("17");
-//		field[1].setText("381");
-//		field[2].setText("res/lse-f-91.stu");
-//		field[3].setText("200");
-//		field[4].setText("19");
-
-		field[0].setText("20");
-		field[1].setText("261");
-		field[2].setText("res/tre-s-92.stu");
+		field[0].setText("17");
+		field[1].setText("381");
+		field[2].setText("res/lse-f-91.stu");
 		field[3].setText("200");
 		field[4].setText("19");
+
+//		field[0].setText("20");
+//		field[1].setText("261");
+//		field[2].setText("res/tre-s-92.stu");
+//		field[3].setText("200");
+//		field[4].setText("19");
 	}
 	
 	public void draw() {
@@ -183,6 +182,7 @@ public class TimeTable extends JFrame implements ActionListener {
 		switch (getButtonIndex((JButton) click.getSource())) {
 		case 0:
 			System.out.println("<<Load>> button pressed");
+			System.out.println("Loading the file " + field[2].getText() + ", " + field[1].getText() + " cources.");
 			courses = new CourseArray(Integer.parseInt(field[1].getText()) + 1, num_slots);
 			courses.readClashes(field[2].getText());
 			draw();
@@ -240,7 +240,39 @@ public class TimeTable extends JFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) {
+		LocalDate currentDate = LocalDate.now();
+		System.out.println("Date: " + currentDate);
+		String git_commit_hash = get_git_commit_hash();
+		System.out.println("Author: Tigran Fahradyan");
+		System.out.println("Git commit hash: " + git_commit_hash);
+		System.out.println("Git commit is specified to indicate the code (logic) used for the results obtained in this log file, and to ensure reproducability\n");
 		new TimeTable();
+	}
+
+	private static String get_git_commit_hash() {
+		try {
+			ProcessBuilder processBuilder = new ProcessBuilder("git", "rev-parse", "HEAD");
+			processBuilder.redirectErrorStream(true);
+			Process process = processBuilder.start();
+
+			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+			StringBuilder output = new StringBuilder();
+			String line;
+			while ((line = reader.readLine()) != null) {
+				output.append(line);
+			}
+
+			int exitCode = process.waitFor();
+			if (exitCode == 0) {
+				return output.toString();
+			} else {
+				System.err.println("Error while getting git hash. Exit code: " + exitCode);
+				return "";
+			}
+		} catch (IOException | InterruptedException e) {
+			e.printStackTrace();
+		}
+		return "";
 	}
 
 	public void test_hopfield_network() {

@@ -1,4 +1,10 @@
+Date: 2024-05-11
+Author: Tigran Fahradyan
+Git commit hash: aae10f0ec88f5b2a9adb772995736d2f8b1328d9
+Git commit is specified to indicate the code (logic) used for the results obtained in this log file, and to ensure reproducability
+
 <<Load>> button pressed
+Loading the file res/lse-f-91.stu, 381 cources.
 <<Continue>> button pressed, num_slots: 17, num_iter: 10000, num_shifts: 3
 Shift = 3	Min clashes = 234	at step 15
 <<Reset>> button pressed
@@ -23,16 +29,4 @@ Shift = 31	Min clashes = 20	at step 17366
 <<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
 Shift = 31	Min clashes = 20	at step 17366
 <<Continue>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
-Shift = 31	Min clashes = 16	at step 32670
-<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
-Shift = 31	Min clashes = 16	at step 32670
-<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
-Shift = 31	Min clashes = 16	at step 32670
-<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
-Shift = 31	Min clashes = 16	at step 32670
-<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
-Shift = 31	Min clashes = 16	at step 32670
-<<Step (hopfield)>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
-Shift = 31	Min clashes = 16	at step 32670
-<<Continue>> button pressed, num_slots: 17, num_iter: 20000, num_shifts: 31
-Shift = 31	Min clashes = 16	at step 32670
+Shift = 31	Min clashes = 16	at step 23279
