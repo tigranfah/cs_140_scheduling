@@ -1,0 +1,83 @@
+Date: 2024-05-19
+Author: Tigran Fahradyan
+Git commit hash: 37000420efacb912ddff1cf8b128e5f8f45e5857
+Git commit is specified to indicate the code (logic) used for the results obtained in this log file, and to ensure reproducability
+
+<<Load>> button pressed
+Loading the file res/tre-s-92.stu, 261 cources.
+<<Continue>> button pressed, num_slots: 20, num_iter: 20000, num_shifts: 19
+Shift = 19	Min clashes = 74	at step 17524
+<<Collect train data>> button pressed
+Shift = 19	Min clashes = 74	at step 17524
+Shift = 19	Min clashes = 74	at step 17524
+Mean number of exams in a slot 4.2
+num of scheduled exams in slot 1: 10
+num of scheduled exams in slot 7: 14
+num of scheduled exams in slot 8: 10
+num of scheduled exams in slot 10: 16
+num of scheduled exams in slot 11: 15
+num of scheduled exams in slot 15: 9
+num of scheduled exams in slot 16: 10
+num of scheduled exams in slot 20: 0
+7 training samples collected
+<<Load>> button pressed
+Loading the file res/tre-s-92.stu, 261 cources.
+<<Reset>> button pressed
+<<Continue>> button pressed, num_slots: 20, num_iter: 20000, num_shifts: 21
+Shift = 21	Min clashes = 116	at step 716
+<<Collect train data>> button pressed
+Shift = 21	Min clashes = 116	at step 716
+Shift = 21	Min clashes = 116	at step 716
+Mean number of exams in a slot 4.7
+num of scheduled exams in slot 1: 11
+num of scheduled exams in slot 2: 9
+num of scheduled exams in slot 6: 14
+num of scheduled exams in slot 8: 13
+num of scheduled exams in slot 9: 8
+num of scheduled exams in slot 10: 12
+num of scheduled exams in slot 11: 15
+num of scheduled exams in slot 18: 12
+num of scheduled exams in slot 20: 0
+8 training samples collected
+<<Reset>> button pressed
+<<Continue>> button pressed, num_slots: 20, num_iter: 20000, num_shifts: 17
+Shift = 17	Min clashes = 104	at step 2985
+<<Collect train data>> button pressed
+Shift = 17	Min clashes = 104	at step 2985
+Shift = 17	Min clashes = 104	at step 2985
+Mean number of exams in a slot 3.55
+num of scheduled exams in slot 2: 14
+num of scheduled exams in slot 6: 9
+num of scheduled exams in slot 7: 13
+num of scheduled exams in slot 10: 8
+num of scheduled exams in slot 15: 12
+num of scheduled exams in slot 19: 15
+num of scheduled exams in slot 20: 0
+6 training samples collected
+<<Train>> button pressed
+Fitting a model with 21 examples.
+Finished fitting.
+<<Reset>> button pressed
+<<Continue>> button pressed, num_slots: 20, num_iter: 20000, num_shifts: 19
+Shift = 19	Min clashes = 74	at step 17524
+<<Reset>> button pressed
+<<Continue>> button pressed, num_slots: 20, num_iter: 17524, num_shifts: 19
+Shift = 19	Min clashes = 74	at step 17524
+<<Step (hopfield)>> button pressed, num_slots: 20, num_iter: 17524, num_shifts: 19
+Shift = 19	Min clashes = 74	at step 17524
+<<Step (hopfield)>> button pressed, num_slots: 20, num_iter: 17524, num_shifts: 19
+Shift = 19	Min clashes = 74	at step 17524
+<<Continue>> button pressed, num_slots: 20, num_iter: 20000, num_shifts: 19
+Shift = 19	Min clashes = 74	at step 17524
+<<Reset>> button pressed
+<<Continue>> button pressed, num_slots: 20, num_iter: 17524, num_shifts: 19
+Shift = 19	Min clashes = 74	at step 17524
+<<Continue (hopfield)>> button pressed, num_slots: 20, num_iter: 10, num_shifts: 19
+Shift = 19	Min clashes = 74	at step 17524
+<<Continue>> button pressed, num_slots: 20, num_iter: 20000, num_shifts: 19
+Shift = 19	Min clashes = 74	at step 17524
+<<Reset>> button pressed
+<<Continue (hopfield)>> button pressed, num_slots: 20, num_iter: 2000, num_shifts: 19
+Shift = 19	Min clashes = 492	at step 16764
+<<Continue>> button pressed, num_slots: 20, num_iter: 20000, num_shifts: 19
+Shift = 19	Min clashes = 98	at step 40741
